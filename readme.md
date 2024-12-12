@@ -3,22 +3,24 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Platform](https://img.shields.io/badge/platform-Windows%20%7C%20Linux%20%7C%20macOS-blue)]()
 [![Language](https://img.shields.io/badge/language-C%2B%2B17-blue.svg)]()
-[![IDE](https://img.shields.io/badge/IDE-CLion-black)]()
 
-> 这是北京交通大学离散数学课程的期末项目，实现了一个高效的等价关系处理系统。该系统不仅完成了基本要求，还加入了许多扩展功能和性能优化。欢迎同学们参考学习！
+欢迎使用等价关系处理系统！这是一个专为BJTU离散数学课程设计的学习辅助工具。在学习离散数学的过程中，理解数学概念和掌握核心算法才是最重要的，而不是被程序结构的设计与填充，亦或是测试用例的生成和验证所困扰。因此，我开发了这个工具，希望能帮助同学们将更多精力投入到数学本质与关键算法中。
 
-## 📚 项目概述
+## 🎯 项目亮点
 
-本项目是一个基于现代C++开发的数学工具，专注于等价关系的处理与分析。系统采用面向对象设计思想，将复杂的数学概念转化为直观的计算机实现。
+这个项目为同学们提供了一个即开即用的程序，主要特点包括：
 
-### 核心特性
+- 完成了基本要求，还加入了许多可供参考的扩展功能和性能优化
+- 预编译的 Windows 可执行文件（.exe），双击即可运行，无需安装任何依赖
+- 内置的等价关系测试用例生成器，一键生成符合数学定义的测试数据
+- 清晰简洁的命令行交互界面，操作直观友好
+- 严格的数学性质验证机制，保证生成数据的正确性
 
-- 📊 关系矩阵的输入与可视化
-- 🔍 等价关系的判定（自反性、对称性、传递性）
-- 🎯 等价类的自动划分
-- ⚡ 最小等价关系的构造
-- 🧮 n元集合上等价关系个数的计算
-- 🔬 自动化测试用例的生成与验证
+## 💻 快速开始
+
+1. 访问 [Release页面](https://github.com/SuXinxian/BJTU-DiscreteMath-Homework-EquivalenceProcessor/releases)
+2. 下载最新版本的可执行文件
+3. 双击运行，开始你的离散数学探索之旅！
 
 ## 🛠️ 技术特点
 
@@ -32,137 +34,20 @@
 - 并查集算法用于等价类划分
 - 贝尔数计算的动态规划优化
 
-## 💻 如何使用
 
-### 快速开始
+## 📝 学术诚信
 
-1. **直接运行方式**
-   - 从发布页下载最新版本的压缩包
-   - 解压后可以直接运行 `DiscreteMathProject.exe`
-   - 或者使用你的IDE打开并运行 `main.cpp`
+在课程作业中使用本工具时，请遵循学术诚信原则，合理引用。建议在报告中采用如下引用格式：
 
-2. **学习与改进方式**
-   - 仔细阅读 `relation_processor.h` 和 `relation_processor.cpp` 的核心代码
-   - 理解系统的关键算法实现（并查集、Warshall算法等）
-   - 可以使用AI辅助工具（如 ChatGPT、Claude）生成简化版本的程序
-   - 在AI生成的基础代码上，自己补充核心算法实现，加深理解
+"本报告中的测试用例由北京交通大学离散数学课程开源项目'等价关系处理系统'（项目地址：https://github.com/SuXinxian/BJTU-DiscreteMath-Homework-EquivalenceProcessor）生成。该工具提供了符合数学定义的等价关系测试用例生成功能。"
 
-3. **开发者方式**
 
-### 编译要求
-- C++17 或更高版本
-- CMake 3.15+
-- 支持现代C++的编译器（如 GCC 7+, Clang 6+, MSVC 2017+）
+## 📋 开源协议
 
-### 编译步骤
+本项目采用 MIT 许可证。这意味着你可以自由地使用、修改和分发这个项目，但需要保留原始的版权声明。
 
-```bash
-git clone https://github.com/your-username/DiscreteMathProject.git
-cd DiscreteMathProject
-mkdir build && cd build
-cmake ..
-cmake --build .
-```
+---
 
-### 使用示例
+让我们一起开启令人兴奋的离散数学学习之旅！如果你对这个项目有任何问题或建议，欢迎在 GitHub 上提出 Issue。
 
-```cpp
-// 创建一个处理3×3关系矩阵的处理器
-RelationProcessor processor(3);
-
-// 读取关系矩阵
-processor.readRelation();
-
-// 判断是否为等价关系
-if (processor.isEquivalence()) {
-    // 获取等价类划分
-    auto partition = processor.getPartition();
-    // 处理划分结果...
-} else {
-    // 计算最小等价关系
-    processor.computeMinimalEquivalence();
-}
-```
-
-## 🌟 特色功能展示
-
-### 1. 智能的关系判定
-系统能够自动判断关系的性质，并提供详细的分析报告：
-```
-━━━━━ 分析结果 ━━━━━
-
-原始关系矩阵:
-1 1 0
-1 1 0
-0 0 1
-
-这不是等价关系
-
-计算包含原关系的最小等价关系:
-1 1 0
-1 1 0
-0 0 1
-```
-
-### 2. 自动化测试生成
-系统包含完善的测试用例生成器，可以自动生成各种规模和特性的测试数据：
-- 随机关系生成
-- 等价关系生成
-- 特定性质关系生成
-- 边界情况测试
-
-## 📝 项目结构
-
-```
-DiscreteMathProject/
-├── src/
-│   ├── main.cpp                 # 主程序入口
-│   ├── relation_processor.h     # 关系处理器声明
-│   ├── relation_processor.cpp   # 关系处理器实现
-│   ├── test_generator.h        # 测试生成器声明
-│   └── test_generator.cpp      # 测试生成器实现
-├── build/                      # 构建目录
-├── docs/                       # 文档
-└── README.md                   # 项目说明
-```
-
-## 🎓 学习资源与建议
-
-### 学习路径建议
-
-1. **基础理论学习**
-   - 首先理解等价关系的数学定义和性质
-   - 掌握关系矩阵的概念和基本运算
-   - 学习等价类划分的理论基础
-
-2. **算法理解**
-   - 深入学习并查集数据结构的原理和实现
-   - 理解 Warshall 算法在传递闭包计算中的应用
-   - 掌握动态规划在关系计数中的应用
-
-3. **代码实现**
-   - 从简单版本开始，逐步添加功能
-   - 可以先实现基本的关系判定
-   - 然后添加等价类划分功能
-   - 最后实现高级特性（如最小等价关系构造）
-
-本项目很好地展示了如何将离散数学中的抽象概念转化为具体的程序实现。通过阅读源码，你可以学习到：
-
-- 如何使用面向对象设计实现数学概念
-- 数据结构的优化技巧（位集、并查集）
-- 经典算法的实现（Warshall算法、动态规划）
-- 现代C++的最佳实践
-
-## 📖 参考资料
-
-- 离散数学（第五版），上海科学技术文献出版社
-- Introduction to Algorithms (CLRS)，第三版
-- Modern C++ Programming Cookbook
-
-## 🤝 贡献
-
-欢迎提交Issue和Pull Request来帮助改进这个项目！
-
-## 📜 许可证
-
-本项目采用 MIT 许可证。详见 [LICENSE](LICENSE) 文件。
+> 温馨提示：本工具仅作为学习辅助，请结合教材和课堂内容深入理解数学概念，并自己撰写核心代码。
